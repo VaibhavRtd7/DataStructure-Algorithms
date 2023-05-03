@@ -18,7 +18,7 @@ void merge(int A[], int left, int mid , int right) {
      R[j] = A[mid+1+j];           // Remind
     
 int i=0, j=0;
-int k=left;    // Initail Index Of merged A
+int k=left;    // Initial Index Of merged A
 
     // Merging the L[] & R[] into A[left...right]
     while(i<n1 && j<n2) {
