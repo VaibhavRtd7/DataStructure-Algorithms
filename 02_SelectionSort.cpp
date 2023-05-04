@@ -1,8 +1,13 @@
 #include<iostream>
 using namespace std;
 
+//1 - Badde number pehle sort hogge..
+//2 - not stable..
+
+//3 - It would be become stable by little bit changes..
 
 void swap(int *a, int *b){
+    
     int temp = *a;
         *a = *b;
         *b = temp;
@@ -14,14 +19,13 @@ void printA(int A[], int n){
       cout << endl;
 }
 
-
 void selectionSort(int A[], int n) {
    int i, j, min;
 
    for(int i=0; i<n-1; i++) {
      min=i;
 
-     for(int j=1; j<n; j++) {
+     for(int j=i+1; j<n; j++) {
        if(A[min] > A[j]){
           min=j;
        }
@@ -45,5 +49,5 @@ int main(){
 }
 
 
-  // Time Complexity O(n^2)  And  not stable
+  // Time Complexity O(n^2) And not stable.
  
