@@ -1,1 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
 
+int binarySearch(int arr[], int n, int key) {
+
+     int start=0;
+     int end=n-1;
+     
+     int mid=(start+end)/2;
+
+     while(start <= end) {
+         
+         if(key == arr[mid]) {
+            return mid;
+         }
+
+         if(key > arr[mid]) {
+            start=mid+1;
+            // end = end;
+         }
+         else {
+        //    start = start;
+           end=mid-1;
+         }
+
+         mid=(start+end)/2;
+
+     }
+
+     return -1;
+}
+
+int main(){
+    
+    int odd[5] = {1, 3, 5, 6, 8};
+    int even[8] = {2, 3, 4, 5, 6, 7, 8, 10};
+    
+    int index = binarySearch(even, 8, 3);    // (arrayName, size, key)
+
+    if(index == -1)
+      cout << "Element is not present." << endl;
+    else 
+      cout << "Element is present at index no. " << index  << endl;
+
+
+    return 0;
+}
