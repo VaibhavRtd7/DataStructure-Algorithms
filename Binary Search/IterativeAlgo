@@ -17,10 +17,8 @@ int binarySearch(int arr[], int n, int key) {
 
          if(key > arr[mid]) {
             start=mid+1;
-            // end = end;
          }
          else {
-        //    start = start;
            end=mid-1;
          }
 
