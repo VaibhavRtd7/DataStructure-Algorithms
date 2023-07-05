@@ -58,3 +58,14 @@ int main(){
     printArray(arr, n);
     return 0;
 }
+
+/*
+    QuickSort :-
+    T(n) = T(n-1) + cn  ---> O(n^2)  Worst case
+                             O(nlogn)  avg. and best case.
+
+    Randomized Quick Sort.
+     Worst Case.  T(n) = O(nlogn)
+
+    if all the elements are same then O(n^2).
+*/
