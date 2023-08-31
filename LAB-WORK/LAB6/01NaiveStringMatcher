@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void BP_StringMatcher(char* T, char* M) {
+
+    int n=strlen(T);
+    int m=strlen(M);
+
+
+    cout<< "String matches at index : ";
+    for(int i=0; i<=n-m; i++) {
+        int j;
+        for(j=0; j<m; j++) {
+            if(T[i+j] != M[j])
+              break;
+        }
+
+        if(m==j)
+          cout << i <<" ";
+    }
+    cout<<endl;
+}
+
+int main() {
+
+    char T[]="JIM_BOOK_ME_IN_A_BOOK_SHOP";
+    char M[]="BOOK";
+
+    BP_StringMatcher(T, M);
+
+    return 0;
+}
+
