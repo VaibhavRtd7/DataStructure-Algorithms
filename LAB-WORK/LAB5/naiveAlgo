@@ -11,7 +11,7 @@ public:
             int i = 0, j = 0;
             while (j < m and text[i + s] == pattern[j])
                 i++, j++;
-
+ 
             if (j == m)
                 cout << "pattern occurs at " << s << endl;
         }
