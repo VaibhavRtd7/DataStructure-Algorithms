@@ -47,3 +47,8 @@ int main() {
 // worst case -  n^2
 // best case - n
 
+--> Simple and easy to implement.
+--> Stable sorting algorithm (preserves order of equal elements).
+--> Inefficient for large datasets (O(N²) time complexity).
+--> Adaptive with early exit if the array becomes sorted early.
+--> In-place sorting with O(1) space complexity.
