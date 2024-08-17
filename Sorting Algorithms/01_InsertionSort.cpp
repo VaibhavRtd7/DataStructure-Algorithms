@@ -33,4 +33,26 @@ void printArray(int A[], int n) {
     return 0; 
  }
 
- // Time Complexity O(n^2) & Stable Sort
+<--- Insertion Sort --->
+
+    1). Approach: Insertion Sort builds the sorted array one element at a time by repeatedly picking the next element and 
+                   inserting it into its correct position among the already sorted elements.
+    2). How it works:
+         Start with the second element of the array (consider the first element as already sorted).
+         Compare it with elements in the sorted portion (to its left).
+         Shift elements to the right until the correct position for the current element is found.
+         Insert the element in its correct position.
+         Move to the next element and repeat until the entire array is sorted.
+    3). Time Complexity:
+         Best case: O(n) (when the array is already sorted).
+         Average and Worst case: O(n²).
+    4). Space Complexity: O(1) (in-place sort).
+    5). Stability: Stable (equal elements retain their relative order).
+    6). Usage: Efficient for small lists or nearly sorted data. Commonly used as the base case for more advanced algorithms like Quick Sort.
+
+ //  Key Differences
+
+    --> Methodology: Selection Sort selects the smallest element and places it in the correct position, 
+                       while Insertion Sort inserts the current element into the correct position within the sorted portion.
+    --> Efficiency: Insertion Sort can be faster than Selection Sort for small or nearly sorted arrays due to its O(n) best-case time complexity.
+    --> Stability: Insertion Sort is stable, while Selection Sort is not.
