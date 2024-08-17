@@ -48,3 +48,26 @@ int main(){
     return 0;
 }
 
+
+
+<-- Selection Sort -->
+
+   1).  Approach: Selection Sort repeatedly selects the smallest (or largest) element from the unsorted portion of the list and swaps it with the first element of the unsorted portion.
+   2).  How it works:
+        -Start with the first element of the array.
+        - Find the minimum element in the unsorted portion of the array.
+        - Swap it with the first element of the unsorted portion.
+        - Move the boundary between sorted and unsorted portions one element to the right.
+        - Repeat until the entire array is sorted.
+    
+    3) Time Complexity: O(n²) for all cases (best, average, and worst).
+    4) Space Complexity: O(1) (in-place sort).
+    5) Stability: Not stable (equal elements might not retain their relative order).
+    6) Usage :-
+         Less efficient on large lists compared to more advanced algorithms.
+
+ //  Key Differences
+    --> Methodology: Selection Sort selects the smallest element and places it in the correct position, 
+                       while Insertion Sort inserts the current element into the correct position within the sorted portion.
+    --> Efficiency: Insertion Sort can be faster than Selection Sort for small or nearly sorted arrays due to its O(n) best-case time complexity.
+    --> Stability: Insertion Sort is stable, while Selection Sort is not.
