@@ -4,7 +4,15 @@ using namespace std;
 // p is starting index
 // r is ending index
 
-int swap(int *a, int *b) {              // void bhi chalega
+/*
+
+Best Case :- n log(n)
+Avg. Case :- n log(n)
+Worst Case :- n^2      - - - - - - > when array is already sorted.
+
+*/
+
+int swap(int *a, int *b) {          
     int t = *a;
         *a = *b;
         *b = t;
@@ -60,6 +68,16 @@ int main(){
 }
 
 /*
+
+
+Best Case :- n log(n)
+Avg. Case :- n log(n)
+Worst Case :- n^2          --> when array is already sorted.
+
+
+
+------------------------------------------------------
+
     QuickSort :-
     T(n) = T(n-1) + cn  ---> O(n^2)  Worst case
                              O(nlogn)  avg. and best case.
