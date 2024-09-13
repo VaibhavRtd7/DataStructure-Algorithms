@@ -1,19 +1,17 @@
 #include<iostream>
  using namespace std;
 
-void InsertionSort(int A[], int n) {
-  int key, i, j;
-  for(j=1; j<n; j++) {
-    key=A[j];
-    i=j-1;
+void InsertionSort(int arr[], int n) {
 
-    while(i>=0 and A[i]>key) {
-        A[i+1]=A[i];
-        i=i-1;
-    } 
-    A[i+1]=key;
-  }
-}
+  for (int i = 0; i <= n - 1; i++) {
+        int j = i;
+        while (j > 0 && arr[j - 1] > arr[j]) {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+            j--;
+        }
+   }
 
 void printArray(int A[], int n) {
   for(int i=0; i<n; i++) {
