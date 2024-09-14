@@ -4,12 +4,83 @@ Best   Case - n log(n)
 Average Case - n log(n)
 Worse Case - n log(n)
 
-Merge sort is a sorting algorithm that follows the divide-and-conquer approach. 
+Merge sort is a sorting algorithm that follows the divide-and-merge approach. 
 It works by recursively dividing the input array into smaller subarrays and
 sorting those subarrays then merging them back together to obtain the sorted array.
 
 */
 
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void merge(vector<int> &arr, int low , int mid, int high) {
+    
+    vector<int> temp;
+    int left=low;
+    int right=mid+1;
+    
+    while(left<=mid && right<=high) {
+        if(arr[left] <= arr[right] ) {
+            temp.push_back(arr[left]);
+            left++;
+        } else {
+            temp.push_back(arr[right]);
+            right++;
+        }
+    }
+    
+    while(left<=mid) {
+        temp.push_back(arr[left]);
+        left++;
+    }
+    
+    while(right<=high) {
+        temp.push_back(arr[right]);
+        right++;
+    }
+    
+    for(int i=low; i<=high; i++) {
+        arr[i] = temp[i-low];
+    }
+}
+
+void mergeSort(vector<int> &arr, int low, int high) {
+    
+    if(low>=high) return;
+    
+    int mid = (low+high)/2;
+    
+    mergeSort(arr, low, mid);
+    mergeSort(arr, mid+1, high);
+    
+    merge(arr, low, mid, high);
+    
+}
+
+int main() {
+
+    vector<int> arr = {9, 4, 7, 6, 3, 1, 5};
+    int n = 7;
+
+    cout << "Before Sorting Array: " << endl;
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " " ;
+    }cout << endl;
+    
+    mergeSort(arr, 0, n - 1);
+    
+    cout << "After Sorting Array: " << endl;
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " "  ;
+    }cout << endl;
+    
+    return 0 ;
+}
+
+//  2nd method type
 
 #include <iostream>
 using namespace std;
@@ -123,91 +194,4 @@ sorting those subarrays then merging them back together to obtain the sorted arr
 // Merges two subAs of A[].
 // First subA is arr[p..mid]
 // Second subA is arr[mid+1..r]
-// void merge(int A[], int const left, int const mid,   int const right)
-// {    
-//     // size of temp arrays
-//     auto const n1 = mid - left + 1;   // 2-0+1    
-//     auto const n2 = right - mid;      // 5-2
 
-//     // Create temp Arrays
-//     auto *L = new int[n1],
-//         *R = new int[n2];
-
-//     // Copy data to temp As L[] and R[]
-//     for (auto i = 0; i < n1; i++)
-//         L[i] = A[left + i];
-//     for (auto j = 0; j < n2; j++)
-//         R[j] = A[mid + 1 + j];            // remind
-
-//     auto i = 0, j = 0; 
-//     int k = left; // Initial index of merged A
-
-//     // Merge the temp As back into A[left..right]                      
-//     while (i < n1 && j < n2) {
-//         if (L[i] <= R[j]) {
-//               A[k] = L[i];
-//            i++;                                
-//         }
-//         else {
-//             A[k] = R[j];
-//             j++;
-//         }
-//         k++;
-//     }
-    
-//     // Copy the remaining elements of
-//     // left[], if there are any
-//     while (i < n1) {
-//         A[k]= L[i];
-//         i++;
-//         k++;
-//     }
-//     // Copy the remaining elements of
-//     // right[], if there are any
-//     while (j < n2) {
-//         A[k] = R[j];
-//         j++;
-//         k++;
-//     }    
-//     delete[] L;
-//     delete[] R;
-// }
-
-// // p is for left index and r is
-// // right index of the sub-A
-// // of arr to be sorted */
-// void mergeSort(int A[], int const p, int const r)
-// {
-//     if (p >= r)
-//         return; // Returns recursively
-
-//     auto mid = p + (r - p) / 2;
-//     mergeSort(A, p, mid);
-//     mergeSort(A, mid + 1, r);
-//     merge(A, p, mid, r);
-// }
-
-// // UTILITY FUNCTIONS
-// // Function to print an A
-// void printA(int A[], int size)
-// {
-//     for (auto i = 0; i < size; i++)
-//         cout << A[i] << " ";
-// }
-
-// // Driver code
-// int main()
-// {
-//              //   0   1   2   3  4  5
-//     int arr[] = { 12, 11, 13, 5, 6, 7 };
-//     auto arr_size = sizeof(arr) / sizeof(arr[0]);
-
-//     cout << "Given A is \n";
-//     printA(arr, arr_size);
-
-//     mergeSort(arr, 0, arr_size - 1);
-
-//     cout << "\nSorted A is \n";
-//     printA(arr, arr_size);
-//     return 0;
-// }
