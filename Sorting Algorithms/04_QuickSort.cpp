@@ -83,13 +83,29 @@ Worst Case :- n^2          --> when array is already sorted.
 
 
 ------------------------------------------------------
+partition an array and then recursively sorts the sub-arrays. The key operation in quick sort is partitioning
+the array into two parts based on the pivot. It is one of the fastest sorting algorithms with an average time
+complexity of O(n log n).
 
-    QuickSort :-
-    T(n) = T(n-1) + cn  ---> O(n^2)  Worst case
-                             O(nlogn)  avg. and best case.
+Steps of Quick Sort:
 
-    Randomized Quick Sort.
-     Worst Case.  T(n) = O(nlogn)
+    Choose a Pivot:
+        A pivot is an element from the array that helps in dividing the array into two sub-arrays.
+        Commonly, the last element is chosen as the pivot, but it can be any element.
 
-    if all the elements are same then O(n^2).
+    Partitioning:
+        The array is rearranged so that:
+            All elements less than the pivot are on the left side.
+            All elements greater than the pivot are on the right side.
+        The pivot is placed in its correct position in the sorted array.
+
+    Recursion:
+        Recursively apply the quick sort algorithm to the left and right sub-arrays (elements to the left and
+        right of the pivot).
+
+Pivot in Quick Sort:
+
+The pivot is an element around which the array is divided. After the partitioning process,
+the pivot is placed in its correct sorted position. The elements to the left of the pivot are smaller, 
+and those on the right are larger.
 */
