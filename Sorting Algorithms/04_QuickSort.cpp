@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// p is starting index
+// l is starting index
 // r is ending index
 
 /*
@@ -10,9 +10,15 @@ Best Case :- n log(n)
 Avg. Case :- n log(n)
 Worst Case :- n^2      - - - - - - > when array is already sorted.
 
+Quick Sort :- Divide and Conquer
+Merge Sort :- Divide and Merge
+
+
+Here we keep the pivot at its right position and then repeat the process for left and right partition through recursion.
+
 */
 
-int swap(int *a, int *b) {          
+void swap(int *a, int *b) {          
     int t = *a;
         *a = *b;
         *b = t;
@@ -24,12 +30,12 @@ void printArray(int A[], int n) {
     cout << endl;
 }
 
-int partition(int A[], int p, int r) {
+int partition(int A[], int l, int r) {
     
     int x = A[r];
-    int i = p - 1;
+    int i = l - 1;
 
-    for(int j = p; j <r; j++) {
+    for(int j = l; j <r; j++) {
         // If current element is smaller than the pivot
         if(A[j] < x) {
             i++;         // increment index of smaller element
@@ -41,12 +47,12 @@ int partition(int A[], int p, int r) {
     return i+1;                                 // Improve....
 }
 
-void QuickSort(int A[], int p, int r) {
+void QuickSort(int A[], int l, int r) {
 
-    if(p < r)
+    if(l < r)
     {
-        int pi = partition(A, p, r);
-        QuickSort(A, p , pi-1);
+        int pi = partition(A, l, r);
+        QuickSort(A, l , pi-1);
         QuickSort(A, pi+1 , r);
     }
 }
