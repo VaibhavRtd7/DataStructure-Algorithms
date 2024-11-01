@@ -62,6 +62,8 @@ In C++, a friend class allows one class to access the private and protected memb
 This is useful when two classes need to work closely together and one class should have access
 to the private or protected members of another.
 
+this friendship allows FriendClass(BoxInspector) to access the private members only through an instance of PrimaryClass(Box)
+
 ```cpp
 
 #include <iostream>
