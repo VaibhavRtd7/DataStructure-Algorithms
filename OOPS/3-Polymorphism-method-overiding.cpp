@@ -1,7 +1,8 @@
 Some Key Points About Virtual Functions:
 
 - Virtual functions are Dynamic in nature. 
-- They are defined by inserting the keyword “virtual” inside a base class and are always declared with a base class and overridden in a child class
+- They are defined by inserting the keyword “virtual” inside a base class and are always declared with a base class and 
+   overridden in a child class
 - A virtual function is called during Runtime
 
 
