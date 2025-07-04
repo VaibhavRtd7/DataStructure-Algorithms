@@ -45,7 +45,7 @@ void merge(vector<int> &arr, int low , int mid, int high) {
     for(int i=low; i<=high; i++) {
         arr[i] = temp[i-low];
     }
-}
+} 
 
 void mergeSort(vector<int> &arr, int low, int high) {
     
@@ -182,14 +182,6 @@ sorting those subarrays then merging them back together to obtain the sorted arr
 
 */
 
-
-
-// #include <iostream>
-// using namespace std;
-
-
-// p -> brgin
-// r -> end
 
 // Merges two subAs of A[].
 // First subA is arr[p..mid]
