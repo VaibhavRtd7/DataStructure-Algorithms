@@ -1,9 +1,9 @@
 # LAB - WORK...
 
-- 1. Randomized Quick Sort ( Sorting Algorithm )
-- 2. Fermat's Algorithms   ( Prime or Not )
-- 3. Ford Fulkerson Algorithm  ( Graph )
-- 4. Kargers Algorithm ( Graph )
+LAB 1. Randomized Quick Sort ( Sorting Algorithm ) <br> 
+LAB 2. Fermat's Algorithms   ( Prime or Not ) <br> 
+LAB 3. Ford Fulkerson Algorithm  ( Graph ) <br> 
+LAB 4. Kargers Algorithm ( Graph ) <br> 
      
  <h3> String Matching Algorithms </h3>
  
